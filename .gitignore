@@ -1,3 +1,4 @@
 node_modules
 */nodemodules
 .env
+.DS_Store
