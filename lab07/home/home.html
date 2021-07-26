@@ -1,0 +1,4 @@
+<ul>
+    <li ng-repeat="meme in homeCtrl.memes | limitTo:10">
+        <div>{{meme.name}}</div><img src="{{meme.url}}" width="200px" height="200px" /></li>
+</ul>
