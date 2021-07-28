@@ -1,0 +1,27 @@
+<div>
+    <h2>Book detail</h2>
+
+    <div>
+        <div>
+            <h4>{{vm.book.title}}</h4>
+        </div>
+        <div>
+            <book-rating></book-rating>
+        </div>
+        <div>
+            <span>Price: </span>{{vm.book.price | currency}}
+        </div>
+        <div>
+            <span>Publisher: </span>{{vm.book.publisher.name}}
+        </div>
+    </div>
+    <div>
+        <h3>Review</h3>
+        <div ng-repeat="review in vm.book.reviews">
+            <div>
+                <h4>{{review.name}}</h4>
+            </div>
+            <div>{{review.comment}}</div>
+        </div>
+    </div>
+</div>

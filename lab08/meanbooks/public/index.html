@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meanBook">
+
+<head>
+    <title>MEAN BOOK
+    </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="content" ng-view></div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="text-center">
+                <a href="https://compro.miu.edu" target="_blank"><img src="./images/compro-web-logo-442x112.webp" height="60" alt="MIU Compro"></a>
+                <br/>
+                <small class="text-dark text-center">&copy; 2021 Maharishi International University. All Rights Reserved. </small>
+            </p>
+        </div>
+    </footer>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="angularjs-app/app.js"></script>
+    <script src="angularjs-app/book-list/books-controller.js"></script>
+    <script src="angularjs-app/book-detail/book-controller.js"></script>
+    <script src="angularjs-app/book-factory/book-factory.js"></script>
+    <script src="angularjs-app/book-rating/book-rating-directive.js"></script>
+
+</body>
+
+</html>
