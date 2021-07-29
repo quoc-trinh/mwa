@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="meanGames">
+<html lang="en" ng-app="meanBook">
 
 <head>
-    <title>MEAN Games
+    <title>MEAN BOOK
     </title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/custom.css" rel="stylesheet" />
 </head>
 
 <body>
-    <h1>Welcome to MEAN Games Home Page</h1>
-    <div ng-view></div>
+    <a href="#">HOME</a>
+    <div class="content" ng-view></div>
+
     <footer class="footer">
         <div class="container">
             <p class="text-center">
@@ -23,7 +24,11 @@
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
     <script src="angularjs-app/app.js"></script>
-    <script src="angularjs-app/game-list/game-list-controller.js"></script>
+    <script src="angularjs-app/book-list/books-controller.js"></script>
+    <script src="angularjs-app/book-detail/book-controller.js"></script>
+    <script src="angularjs-app/book-factory/book-factory.js"></script>
+    <script src="angularjs-app/book-rating/book-rating-directive.js"></script>
+    <script src="angularjs-app/book-detail-update/book-update-controller.js"></script>
 </body>
 
 </html>

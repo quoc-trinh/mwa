@@ -66,6 +66,9 @@ module.exports.games = (req, res) => {
 module.exports.getGame = (req, res) => {
     const gameId = req.params.gameId;
     Game.findById(gameId).exec(function(err, game) {
+        game.save(()=>{
+
+        });
         res.status(200).json(game);
     });
 }

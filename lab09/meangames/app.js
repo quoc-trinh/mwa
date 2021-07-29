@@ -8,7 +8,7 @@ const app = express();
 app.use("/node_modules", express.static("node_modules"));
 app.use(express.static(process.env.PUBLIC_FOLDER));
 app.use(express.urlencoded({ extended: false }));
-
+app.use(express.json());
 //Non-terminating
 app.use((req, res, next) => {
     console.log(req.method, req.url);

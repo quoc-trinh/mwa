@@ -59,17 +59,6 @@ module.exports.addGame = (req, res) => {
     console.log(req.body);
     const game = {};
     copyGameFromRequest(req, game);
-
-    const gameMo = new Game(game);
-    gameMo.save((err, game) => {
-        if (err) {
-            console.log("Error creating games");
-            res.status(StatusCodes.BAD_REQUEST).json(err);
-        } else {
-            console.log("Game created", game);
-            res.status(StatusCodes.CREATED).json(game);
-        }
-    });
     Game.create(game,
         (err, game) => {
             if (err) {

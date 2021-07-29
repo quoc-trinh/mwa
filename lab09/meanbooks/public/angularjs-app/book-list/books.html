@@ -1,0 +1,36 @@
+<h1>Book management</h1>
+<table>
+    <thead>
+        <td>Book title</td>
+        <td/>
+        <td>Actions</td>
+    </thead>
+    <tbody ng-repeat="book in vm.books">
+        <tr>
+            <td> <a href="/#!/book/{{book._id}}">{{book.title}}</a></td>
+            <td>&nbsp;&nbsp;</td>
+            <td> <a href="#" ng-click="vm.deleteBook(book._id)">Delete</a>
+            </td>
+            <td> <a href="/#!/book/update/{{book._id}}">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<form name="vm.createBookForm">
+    <h3>Add new book</h3>
+    <BR/> Title: <input type="text" name="title" required ng-model="vm.newBook.title" style="color:black" />
+    <span ng-show="vm.createBookForm.title.$dirty && vm.createBookForm.title.$invalid">This feild requires</span>
+    <BR/> Price: <input type="text" name="price" required ng-model="vm.newBook.price" style="color:black" />
+    <BR/> Authors: <input type="text" name="authors" required ng-model="vm.newBook.authors" style="color:black" />
+    <BR/> Pages: <input type="text" name="pages" ng-model="vm.newBook.pages" style="color:black" />
+    <BR/> Rating: <input type="text" name="rate" ng-model="vm.newBook.rate" pattern="[1-5]" style="color:black" />
+    <span ng-show="vm.createBookForm.rate.$dirty && vm.createBookForm.rate.$invalid">reate should be a number from 1-5</span>
+    <BR/> ISBN-10: <input type="text" name="isbn10" pattern="^[0-9]{10,11}" ng-model="vm.newBook.isbn10" style="color:black" />
+    <span ng-show="vm.createBookForm.isbn10.$dirty && vm.createBookForm.isbn10.$invalid">isbn10 requires 10 digits.</span>
+    <BR/> ISBN-13: <input type="text" name="isbn13" pattern="^[0-9]{13,15}" ng-model="vm.newBook.isbn13" style="color:black" />
+    <span ng-show="vm.createBookForm.isbn13.$dirty && vm.createBookForm.isbn13.$invalid">isbn13 requires 13 digits.</span>
+    <BR/> Publish date: <input type="text" name="publishDate" pattern="(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d" ng-model="vm.newBook.publisheDate" style="color:black" />
+    <span ng-show="vm.createBookForm.publishDate.$dirty && vm.createBookForm.publishDate.$invalid">Publisher date should in format mm/dd/20yy or format mm/dd/20yy or </span>
+    <BR/>
+    <button type="submit" class="btn-success" ng-click="vm.addBook()">Add Book</button>
+</form>
