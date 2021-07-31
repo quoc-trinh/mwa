@@ -1,0 +1,58 @@
+<h3>{{vm.title}}</h3>
+<hr/>
+<table class="table">
+    <thead class="text-center display-8">
+        <td>Book title</td>
+        <td/>
+        <td>Actions</td>
+    </thead>
+    <tbody class="h6" ng-repeat="job in vm.jobs">
+        <tr>
+            <td><a href="/#!/job/{{job._id}}">{{job.title}}</a></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><a href="#" ng-click="vm.deleteJob(job._id)">Delete</a>
+            </td>
+            <td><a href="/#!/job/update/{{job._id}}">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<br/>
+<hr/>
+<div ng-if="vm.message" class="alert alert-success" role="alert">{{ vm.message}}</div>
+<div ng-if="vm.err" class="alert alert-danger" role="alert">{{vm.err}}</div>
+<div>
+    <form class="form-group w-50" id="addJobForm" name="vm.jobForm" ng-submit="vm.addJob()">
+        <div class="form-group">
+            <h3>Add a new job:</h3>
+        </div>
+        <div class="form-group">
+            <label>Title </label>
+            <input class="form-control" type="text" name="title" required ng-model="vm.formJob.title" />
+        </div>
+        <div class="form-group">
+            <label>Salary </label>
+            <input class="form-control" type="text" name="salary" required ng-model="vm.formJob.salary | currency" />
+        </div>
+        <div class="form-group">
+            <label>Experience </label>
+            <input class="form-control" type="text" name="experience" required ng-model="vm.formJob.experience" />
+        </div>
+        <div class="form-group">
+            <label>Description </label>
+            <input class="form-control" type="text" name="description" required ng-model="vm.formJob.description" />
+        </div>
+        <div class="form-group">
+            <label>Skills</label>
+            <input class="form-control" type="text" name="skill" required ng-model="vm.formJob.skill" />
+        </div>
+        <div class="form-group">
+            <label>Location</label>
+            <input class="form-control" type="text" name="location" required ng-model="vm.formJob.location.city" />
+        </div>
+        <div class="top-20">
+            <button type="submit" class="btn btn-success">Add Job</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,41 @@
+<h1>Job post
+</h1>
+<hr/>
+<div>
+    <div style="display: block;">
+        <h4>{{vm.job.title}} </h4>
+        <h6>Posted at: {{vm.job.postDate | date:"short" }}</h6>
+    </div>
+    <br/>
+    <p>Salary: {{vm.job.salary | currency}}</p>
+    <p>Experience: {{vm.job.experience}}</p>
+    <p>Description: {{vm.job.description}}</p>
+    <p>Skills: {{vm.job.skills[0]}}</p>
+    <p>Location: {{vm.job.location.city}}</p>
+    <hr/>
+    <div>
+        <form class="form-group w-50" id="reviewForm" name="vm.reviewForm" ng-submit="vm.addReview()">
+            <div class="form-group">
+                <h4>Add a Review: </h4>
+            </div>
+            <div class="form-group">
+                <label>Name </label>
+                <input class="form-control" type="text" name="name" required ng-model="vm.formReview.name " />
+            </div>
+            <div class="form-group ">
+                <label>Review </label>
+                <textarea class="form-control " name="comment " required ng-model="vm.formReview.comment "></textarea>
+            </div>
+            <div class="form-group ">
+                <button type="submit " class="btn btn-success ">Add Review</button>
+            </div>
+        </form>
+    </div>
+    <h3>Reviews</h3>
+    <div>
+        <div ng-repeat="review in vm.job.reviews">
+            <p>{{review.name}}</p>
+            <p class="font-weight-bold">{{review.comment}}</p>
+        </div>
+    </div>
+</div>

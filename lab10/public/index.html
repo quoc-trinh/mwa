@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meanJobs">
+
+<head>
+    <title>Mean jobs</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+</head>
+
+<body>
+    <jobs-navigation></jobs-navigation>
+    <br/>
+    <div class="container">
+        <div ng-view></div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-center">
+                <a href="https://compro.miu.edu" target="_blank"><img src="./images/compro-web-logo-442x112.webp" height="60" alt="MIU Compro"></a>
+                <br/>
+                <small class="text-dark text-center">&copy; 2021 Maharishi International University. All Rights Reserved. </small>
+            </p>
+        </div>
+    </footer>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="angularjs-app/app.js"></script>
+    <script src="angularjs-app/job-list/job-list-controller.js"></script>
+    <script src="angularjs-app/job-data-factory/job-data-factory.js"></script>
+    <script src="angularjs-app/job-display/job-display-controller.js"></script>
+    <script src="angularjs-app/job-edit/job-edit-controller.js"></script>
+    <script src="angularjs-app/navigation-directive/navigation-directive.js"></script>
+</body>
+
+</html>
