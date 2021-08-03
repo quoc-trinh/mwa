@@ -1,0 +1,17 @@
+<form name="vm.bookForm">
+    <h3>Update book</h3>
+    <BR/> Title: <input type="text" name="title" required ng-model="vm.book.title" style="color:black" />
+    <BR/> Price: <input type="text" name="price" required ng-model="vm.book.price" style="color:black" />
+    <BR/> Authors: <input type="text" name="authors" required ng-model="vm.book.authors" style="color:black" />
+    <BR/> Pages: <input type="text" name="pages" ng-model="vm.book.pages" style="color:black" />
+    <BR/> Rating: <input type="text" name="rate" ng-model="vm.book.rate" pattern="[1-5]" style="color:black" />
+    <span ng-show="vm.bookForm.rate.$dirty && vm.bookForm.rate.$invalid">reate should be a number from 1-5</span>
+    <BR/> ISBN-10: <input pattern="^[0-9]{10,11}" type="text" name="isbn10" ng-model="vm.book.isbn10" style="color:black" />
+    <span ng-show="vm.bookForm.isbn10.$dirty && vm.bookForm.isbn10.$invalid">isbn10 requires 10 characters.</span>
+    <BR/> ISBN-13: <input type="text" pattern="^[0-9]{13,15}" name="isbn13" ng-model="vm.book.isbn13" style="color:black" />
+    <span ng-show="vm.bookForm.isbn13.$dirty && vm.bookForm.isbn13.$invalid">isbn13 requires 13 characters.</span>
+    <BR/> Publish date: <input type="text" name="publishDate" ng-model="vm.book.publisheDate" pattern="(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d" style="color:black" />
+    <span ng-show="vm.bookForm.publishDate.$dirty && vm.bookForm.publishDate.$invalid">Publisher date should in format mm/dd/20yy or format mm/dd/20yy or </span>
+    <BR/>
+    <button type="submit" class="btn-success" ng-click="vm.updateBook()">Update Book</button>
+</form>
