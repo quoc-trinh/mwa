@@ -1,0 +1,12 @@
+{
+    "name": "lab",
+    "version": "1.0.0",
+    "description": "A demostration for promise",
+    "main": "lab.js",
+    "scripts": {
+        "start": "node lab.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Hoang Trinh",
+    "license": "ISC"
+}
