@@ -1,0 +1,13 @@
+<div *ngIf="Book">
+    <h2>{{Book.title}}</h2>
+    <app-Book-rating [rating]=Book.rate></app-Book-rating>
+    <ul>
+        <li>Title: {{Book.title}}</li>
+        <li>Year: {{Book.year}}</li>
+        <li>Rate: {{Book.rate}}</li>
+        <li>Price: {{Book.price | currency}}</li>
+        <li>ISBN-10: {{Book.isbn10}}</li>
+        <li>ISBN-13: {{Book.isbn13}}</li>
+        <li>Pages: {{Book.pages}}</li>
+    </ul>
+</div>

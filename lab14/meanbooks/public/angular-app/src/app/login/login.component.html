@@ -1,0 +1,13 @@
+<form *ngIf="!isLoggedIn()" [formGroup]="loginForm" class="d-flex" role="login" (ngSubmit)="onLogin()">
+    <div class="form-group" ngClass="{'has-error': err}">
+        <input type="text" class="form-control me-2" placeholder="Username" formControlName="username" autocapitalize="none">
+    </div>
+    <div class="form-group" ngClass="{'has-error': err}">
+        <input type="password" class="form-control input-sm" placeholder="Password" formControlName="password" autocapitalize="none">
+    </div>
+    <button type="submit" class="btn btn-sm btn-success">Login</button>
+</form>
+
+<ul *ngIf="isLoggedIn()" class="new navbar-nav navbar-right">
+    <li><button class="navbar-btn btn-sm btn-info" (click)="onLogout()">Logout</button></li>
+</ul>

@@ -1,0 +1,13 @@
+<div *ngIf="game">
+    <h2>{{game.title}}</h2>
+    <app-game-rating [rating]=game.rate></app-game-rating>
+    <ul>
+        <li>Title: {{game.title}}</li>
+        <li>Year: {{game.year}}</li>
+        <li>Rate: {{game.rate}}</li>
+        <li>Price: {{game.price | currency}}</li>
+        <li>MinPlayer: {{game.minPlayers}}</li>
+        <li>MaxPlayer: {{game.maxPlayers}}</li>
+        <li>MinAge: {{game.minAge}}</li>
+    </ul>
+</div>

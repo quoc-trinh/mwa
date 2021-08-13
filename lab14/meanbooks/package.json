@@ -1,0 +1,26 @@
+{
+    "name": "lab06",
+    "version": "1.0.0",
+    "description": "MEAN Book",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "startBackEnd": "node app.js",
+        "startFrontEnd": "cd public/angular-app && ng serve",
+        "start": "npm-run-all --parallel startBackEnd startFrontEnd"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "angular": "^1.8.2",
+        "angular-route": "^1.8.2",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "mongoose": "^5.13.3",
+        "path": "^0.12.7",
+        "jsonwebtoken": "^8.5.1",
+        "bcrypt": "^5.0.1",
+        "angular-jwt": "^0.1.11",
+        "npm-run-all": "^4.1.5"
+    }
+}

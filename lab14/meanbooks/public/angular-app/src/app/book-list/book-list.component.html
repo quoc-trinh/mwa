@@ -1,0 +1,34 @@
+<ul>
+    <li *ngFor="let Book of Books">
+        <tr>
+            <td><a routerLink="/book/{{Book._id}}">{{Book.title}}</a></td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td *ngIf="isLoggedIn()"><a href="/books" (click)="deleteBook(Book._id)">Delete</a></td>
+        </tr>
+    </li>
+</ul>
+
+<div *ngIf="isLoggedIn()">
+    <div *ngIf="message" class="alert alert-success" role="alert">
+        <p>{{message}}</p>
+    </div>
+
+    <div *ngIf="err" class="alert alert-danger" role="alert">
+        <p>{{err}}</p>
+    </div>
+    <form [formGroup]="addBookForm" (ngSubmit)="onAddBook()">
+        To add a new Book please fill in all the fields below:
+        <BR />
+        <h3>Add new book</h3>
+        <BR/> Title: <input type="text" name="title" required formControlName="title" style="color:black" />
+        <BR/> Price: <input type="text" name="price" required formControlName="price" style="color:black" />
+        <BR/> Authors: <input type="text" name="authors" required formControlName="authors" style="color:black" />
+        <BR/> Pages: <input type="text" name="pages" formControlName="pages" style="color:black" />
+        <BR/> Rating: <input type="text" name="rate" formControlName="rate" pattern="[1-5]" style="color:black" />
+        <BR/> ISBN-10: <input type="text" name="isbn10" formControlName="isbn10" style="color:black" />
+        <BR/> ISBN-13: <input type="text" name="isbn13" formControlName="isbn13" style="color:black" />
+        <BR/> Publish date: <input type="text" name="publishDate" formControlName="publisheDate" style="color:black" />
+        <BR/>
+        <button type="submit" class="btn-success">Add Book</button>
+    </form>
+</div>

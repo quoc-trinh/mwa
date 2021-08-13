@@ -1,0 +1,17 @@
+Update new game:
+<form name="vm.gameForm" ng-submit="vm.updateGame()">
+    <br/> Title: <input type="text" name="title" required ng-model="vm.game.title" style="color:black" />
+    <br/> Price: <input type="text" name="price" required ng-model="vm.game.price" style="color:black" />
+    <br/> Year of Publication: <input type="text" name="year" required ng-model="vm.game.year" style="color:black" />
+    <br/> Rating: <input type="text" name="rating" required pattern="[1-5]" ng-model="vm.game.rate" style="color:black" />
+    <span ng-show="vm.gameForm.rating.$dirty && vm.gameForm.rating.$invalid" style="color:chocolate">Rating should be from 1 to 5.</span>
+    <br/> Minimum Number of Players: <input type="text" name="minPlayers" required pattern="[/1-9]\d*" ng-model="vm.game.minPlayers" style="color:black" />
+    <span ng-show="vm.gameForm.minPlayers.$dirty && vm.gameForm.minPlayers.$invalid" style="color:chocolate">Minimum players must be at least 1.</span>
+    <br/> Maximum Number of Players: <input type="text" name="maxPlayers" required pattern="[/1-9]\d*" ng-model="vm.game.maxPlayers" style="color:black" />
+    <span ng-show="vm.gameForm.maxPlayers.$dirty && vm.gameForm.maxPlayers.$invalid" style="color:chocolate">Maximum players must be at least 1.</span>
+    <br/> Minimum Recommended Player Age: <input type="text" name="minAge" required ng-model="vm.game.minAge" style="color:black" />
+    <br/> Designer name: <input type="text" name="designer" required ng-model="vm.game.designers" style="color:black" />
+    <br/>
+    <button type="submit" class="btn-success">Update Game</button>
+    <br/>
+</form>

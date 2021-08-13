@@ -1,0 +1,27 @@
+<ul>
+    <li *ngFor="let game of games"><a routerLink="/game/{{game._id}}">{{game.title}}</a></li>
+</ul>
+
+<div *ngIf="isLoggedIn()">
+    <div *ngIf="message" class="alert alert-success" role="alert">
+        <p>{{message}}</p>
+    </div>
+
+    <div *ngIf="err" class="alert alert-danger" role="alert">
+        <p>{{err}}</p>
+    </div>
+    <form [formGroup]="addGameForm" (ngSubmit)="onAddGame()">
+        To add a new game please fill in all the fields below:
+        <BR /> Title: <input type="text" name="title" required formControlName="title" style="color:black" />
+        <BR /> Price: <input type="text" name="price" required formControlName="price" style="color:black" />
+        <BR /> Year of Publication: <input type="text" name="year" required formControlName="year" style="color:black" />
+        <BR /> Rating: <input type="text" name="rating" required formControlName="rate" style="color:black" />
+        <BR /> Minimum Number of Players: <input type="text" name="minPlayers" required ng-pattern="/^[0-9]{1,2}/" formControlName="minPlayers" style="color:black" />
+        <BR /> Maximum Number of Players: <input type="text" name="maxPlayers" required formControlName="maxPlayers" style="color:black" />
+        <BR /> Minimum Recommended Player Age: <input type="text" name="minAge" required formControlName="minAge" style="color:black" />
+        <BR /> Designer name: <input type="text" name="designer" required formControlName="designer" style="color:black" />
+        <BR />
+        <button type="submit" class="btn-success">Add Game</button>
+        <BR />
+    </form>
+</div>
